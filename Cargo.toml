@@ -1,8 +1,15 @@
 [package]
 name = "pexels"
-version = "0.1.0"
+version = "0.1.2"
 authors = ["Andra Antariksa <andra.antariksa@gmail.com>"]
 edition = "2018"
+description = "Pexels wrapper API for Rust"
+license = "MIT"
+repository = "https://github.com/andraantariksa/pexels"
+readme = "README.md"
+keywords = ["pexels", "api"]
+travis-ci = { repository = "https://travis-ci.org/andraantariksa/pexels", branch = "master" }
+maintenance = { status = "experimental" }
 
 [dependencies]
 reqwest = "0.9.16"
