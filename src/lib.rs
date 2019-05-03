@@ -33,20 +33,3 @@ impl Pexels {
 
 pub mod photo;
 pub mod video;
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn search_photo_test() {
-        use super::*;
-        let p = Pexels::new("".to_string());
-        println!("{:?}", p.search_photo("mountain".to_string(), 1, 1));
-    }
-
-    #[test]
-    fn search_video_test() {
-        use super::*;
-        let p = Pexels::new("".to_string());
-        println!("{:?}", p.search_video("mountain".to_string(), 1, 1));
-    }
-}
