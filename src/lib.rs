@@ -1,36 +1,40 @@
 /*!
-The `pexels` crate provides API wrapper for Pexels.
+The `pexels` crate provides API wrapper for Pexels. It based on [Pexels API Documentation](https://www.pexels.com/api/documentation/).
 
-The API's are based on [Pexels API Documentation](https://www.pexels.com/api/documentation/)
+To get the API key, you have request the access from [Request API Access – Pexels](https://www.pexels.com/api/new/).
+
+This library are depends on [serde-json](https://github.com/serde-rs/json) crate to handle the result, thus you have to read the documentation [serde_json - Rust](https://docs.serde.rs/serde_json/index.html), especially [serde_json::Value - Rust](https://docs.serde.rs/serde_json/enum.Value.html).
 
 # Setup
 
-Add this to your `Cargo.toml`:
+Add this line to your `Cargo.toml` file, below `[dependencies]`
 
 ```toml
-[dependencies]
 pexels = "*"
 ```
 
-and this to your crate root:
+and this to your crate root file e.g `main.rs`:
 
-```ignore
+```rust
 extern crate pexels;
 ```
+
+Done! Now you can use this API wrapper.
 
 # Example
 
 This example shows how to get the list of *mountains* photos.
 
-```ignore
+```rust
 extern crate pexels;
 
 fn main() {
-
+    let pexels_api_client = pexels::Pexels::new("YOUR_API_KEY".to_owned());
+    pexels_api_client.photo_search("mountains".to_string(), 15, 1);
 }
 ```
 
-and you can run run using `cargo run` ! Simply as that.
+and you can run it using `cargo run` ! Simply as that.
 
 # Random photo
 
